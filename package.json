@@ -6,9 +6,15 @@
   "dependencies": {
     "cypress": "^10.11.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: paso algo aquí\"&& exit 1",
+    "open": "./node_modules/.bin/cypress open",
+    "run": "./node_modules/.bin/cypress run",
+    "build": "babel src -d lib"
+  },
+  "devDependencies": {
+    "cypress": "^10.11.0",
+    "install": "^0.13.0"
   },
   "repository": {
     "type": "git",

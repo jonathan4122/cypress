@@ -1,5 +1,9 @@
 name: Cypress Test
-on: [pull_request]
+on:
+  pull_request:
+      branches:
+      - master
+      - release/*
 jobs:
   cypress-run:
     runs-on: ubuntu-latest

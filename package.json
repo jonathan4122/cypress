@@ -1,0 +1,23 @@
+{
+  "name": "cypressQa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^10.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathan4122/cypressQa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathan4122/cypressQa/issues"
+  },
+  "homepage": "https://github.com/jonathan4122/cypressQa#readme"
+}

@@ -1,18 +1,19 @@
-name: Cypress Test
+name: Cypress tests
 on:
-  pull_request:
-      branches:
+  push:
+    branches:
       - master
-      - release/*
+  pull_request:
+      types: [opened, synchronize, reopened]
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    name: Cypress run
+    runs-on: self-hosted
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.5.0
+        uses: actions/checkout@v2
+
       - name: Cypress run
-        uses: cypress-io/github-action@v4.2.0
+        uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          start: npm start
-      - run: cypress run
+          record: true

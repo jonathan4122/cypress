@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.5.0
-      - name: Cypress run
+      - name: Cypress.io
         uses: cypress-io/github-action@v4.2.0
         with:
           build: npm run build

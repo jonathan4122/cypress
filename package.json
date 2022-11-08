@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: paso algo aquí\"&& exit 1",
     "open": "./node_modules/.bin/cypress open",
-    "run": "./node_modules/.bin/cypress run",
-    "build": "babel src -d lib"
+    "run": "./node_modules/.bin/cypress run"
   },
   "devDependencies": {
     "cypress": "^10.11.0",

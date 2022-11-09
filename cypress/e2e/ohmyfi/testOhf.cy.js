@@ -1,6 +1,6 @@
 describe('Primer prueba de portales', () => {
     beforeEach(() => {
-        cy.visit("https://jonathan4122.github.io/cypressQa/");
+        cy.visit("https://google.com");
     });
     it('relleno de formulario!', () => {
     });

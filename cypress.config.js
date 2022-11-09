@@ -6,9 +6,10 @@ module.exports = defineConfig({
     "num_Phone": "35648978",
     "Token_test": "12345",
     "Name_User": "BootUserTest",
-    "projectId": "imix9s",
+    "projectId": "gwkjzq",
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
   },
+  "projectId": "gwkjzq"
 });

@@ -3,6 +3,6 @@ describe('Primer prueba de portales', () => {
         cy.visit("https://google.com");
     })
     it('relleno de formulario!', () => {
-        cy.window().click()
+        cy.get('.lnXdpd').click() // Click on button
     })
 })

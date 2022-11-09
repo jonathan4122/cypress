@@ -1,19 +1,18 @@
-name: Cypress Test
+name: Cypress tests
 on:
-  push:
-    branches:
-      - master
+  # Trigger analysis when pushing in master or pull requests, and when creating
+  # a pull request. 
   pull_request:
-      types: [opened, synchronize, reopened]
+    branches: [main]
+    types: [opened, synchronize]
 jobs:
   cypress-run:
+    name: Cypress run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.5.0
-      - name: Cypress run
-        uses: cypress-io/github-action@v4.2.0
+        uses: actions/checkout@v2
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2
         with:
-          build: npm run build
           start: npm start
-      - run: cypress run

@@ -1,8 +1,8 @@
 describe('Primer prueba de portales', () => {
     beforeEach(() => {
-        cy.visit("https://google.com");
+        cy.visit("https://ohmyfi.com/clientes");
     })
     it('relleno de formulario!', () => {
-        cy.get('.lnXdpd').click() // Click on buttonaaaaaaa
+        cy.get('.gLFyf').type('hola') // Click on buttonaaaaaaa
     })
 })

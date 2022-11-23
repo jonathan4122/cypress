@@ -17,6 +17,7 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v4
         with:
-          start: npm run
+          build: npm run build
+          start: npm start
         env:          
           CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}

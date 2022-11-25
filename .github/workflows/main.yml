@@ -1,6 +1,14 @@
 name: Cypress tests
+<<<<<<< HEAD
 on: [push]
   # Trigger analysis when pushing in master or pull requests
+=======
+on:
+  pull_request:
+      types:
+        - closed
+  # Trigger analysis when pushing in master or pull requests, and when creating
+>>>>>>> d311150f72a804dc839a2887beb6c7461bf9b75d
   # push:
   #   branches: [master]
   #   types: [opened, synchronize]
@@ -8,19 +16,21 @@ on: [push]
   #   branches: [master]
   #   types: [opened, synchronize]
 jobs:
-  cypress-run:
-    name: Cypress run
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cypress.io
-        uses: cypress-io/github-action@v4
-        with:
-          # build: npm run build
-          # start: npm start
-          start: npm run
-          record: true
-        env:          
-          CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  if_merged:
+    if: github.event.pull_request.merged == true
+    cypress-run:
+      name: Cypress run
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Cypress.io
+          uses: cypress-io/github-action@v4
+          with:
+            # build: npm run build
+            # start: npm start
+            start: npm run
+            record: true
+          env:          
+            CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

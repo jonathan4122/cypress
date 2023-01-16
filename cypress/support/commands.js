@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import testCoreOmf from "../pages/coreOmf_PO_test";
+
+Cypress.Commands.add("loginCoreOhmyfi", () => {
+    cy.window().then(win => {
+        cy.visit(Cypress.env('UrlCoreDemo'));
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            return false
+        });
+        testCoreOmf.typeNameLogin(Cypress.env('UserCoreDemo'));
+        testCoreOmf.typePassLogin(Cypress.env('PassUserCoreDemo'));
+        testCoreOmf.buttonSubmitForm('#boton_se_fue button[type="submit"]');
+    });
+});

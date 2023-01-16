@@ -33,7 +33,7 @@ class testCoreOmf {
         this.elements.passLogin().type(userpassLogin)
     }
     buttonSubmitForm(idFormSend){
-        this.elements.functionCy().get(idFormSend).click()
+        this.elements.functionCy().get(idFormSend).click({ force: true })
     }
     clickMultiple(idContent){
         this.elements.functionCy().get(idContent).click({ multiple: true })

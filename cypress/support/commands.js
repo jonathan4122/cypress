@@ -33,6 +33,7 @@ Cypress.Commands.add("loginCoreOhmyfi", () => {
         });
         testCoreOmf.typeNameLogin(Cypress.env('UserCoreDemo'));
         testCoreOmf.typePassLogin(Cypress.env('PassUserCoreDemo'));
+        cy.wait(1000);
         testCoreOmf.buttonSubmitForm('#boton_se_fue button[type="submit"]');
     });
 });

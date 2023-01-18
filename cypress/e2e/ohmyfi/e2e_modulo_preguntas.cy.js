@@ -11,6 +11,7 @@ describe('Administrar preguntas (crear, modificar y borrar) - Core OMF', () => {
         cy.get('[name="Pregunta[unica]"]').siblings('label').contains('Recurrente').click();
         cy.get('[name="Pregunta[unica]"]').siblings('label').contains('Sólo una vez').click();
         cy.get('#inputTagPublicacion_chosen').type('tagpreguntatestcypresss{enter}');
+        cy.wait(1000);
         cy.get('#formOpciones input').type('Respuesta A{enter}');
         cy.get('#formOpciones input').type('Respuesta B{enter}');
         cy.get('#formodal-botonSubmit').click();

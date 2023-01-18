@@ -15,7 +15,7 @@ describe('Administrar preguntas (crear, modificar y borrar) - Core OMF', () => {
         cy.get('#formOpciones input').type('Respuesta A{enter}');
         cy.get('#formOpciones input').type('Respuesta B{enter}');
         cy.get('#formodal-botonSubmit').click();
-        cy.wait(1500);
+        cy.wait(1000);
         cy.get('.omf_archivar').click();
         cy.wait(1000);
         cy.get('.sweet-confirm').contains('Si, archivar').click();

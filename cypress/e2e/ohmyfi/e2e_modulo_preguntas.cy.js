@@ -3,6 +3,7 @@ import testCoreOmf from "../../pages/coreOmf_PO_test";
 describe('Administrar preguntas (crear, modificar y borrar) - Core OMF', () => {
     it('Modulo Preguntas Plataforma', () => {
         cy.loginCoreOhmyfi();
+        cy.wait(1500);
         testCoreOmf.openSeccionLateral('preguntas');
         cy.get('#abrirForm-Pregunta').click();
         testCoreOmf.closeAlertSeccion('OK');

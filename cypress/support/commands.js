@@ -33,11 +33,6 @@ Cypress.Commands.add("loginCoreOhmyfi", () => {
         });
         testCoreOmf.typeNameLogin(Cypress.env('UserCoreDemo'));
         testCoreOmf.typePassLogin(Cypress.env('PassUserCoreDemo'));
-        cy.get('#g-recaptcha *> iframe')
-        .then($iframe => {
-            const $body = $iframe.contents().find('body');
-            cy.wrap($body).find('.recaptcha-checkbox-border').should('be.visible').click();
-        });
         cy.wait(3000);
         testCoreOmf.buttonSubmitForm('#boton_se_fue button[type="submit"]');
     });

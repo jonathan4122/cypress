@@ -24,6 +24,7 @@ jobs:
             # start: npm start
             start: npm run
             record: true
+            browser: chrome
           env:  
             if: github.event.pull_request.merged == true
             CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}

@@ -10,6 +10,7 @@
     "test": "echo \"Error: paso algo aquí\"&& exit 1",
     "open": "./node_modules/.bin/cypress open",
     "run": "./node_modules/.bin/cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
     "build": "babel src -d lib"
   },
   "repository": {

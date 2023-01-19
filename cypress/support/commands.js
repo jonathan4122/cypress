@@ -31,6 +31,21 @@ Cypress.Commands.add("loginCoreOhmyfi", () => {
         Cypress.on('uncaught:exception', (err, runnable) => {
             return false
         });
+        // cy.get('#g-recaptcha *> iframe').then(($el) => {
+        //     Cypress.dom.isVisible($el) // true
+        // });
+        cy.get("body").then($body => {
+            if ($body.find("#g-recaptcha *> iframe").length > 0) {   
+                cy.get('iframe')
+                    .first()
+                    .then((recaptchaIframe) => {
+                        const body = recaptchaIframe.contents()
+                        cy.wrap(body).find('.recaptcha-checkbox-border').should('be.visible').click()
+                    })
+            }else{
+                cy.log('no esta');
+            }
+        });
         testCoreOmf.typeNameLogin(Cypress.env('UserCoreDemo'));
         testCoreOmf.typePassLogin(Cypress.env('PassUserCoreDemo'));
             cy.window().then(win => {
@@ -43,13 +58,3 @@ Cypress.Commands.add("loginCoreOhmyfi", () => {
         testCoreOmf.buttonSubmitForm('#boton_se_fue button[type="submit"]');
     });
 });
-
-
-  Cypress.Commands.add('confirmCaptcha', function () {
-    cy.get('iframe')
-      .first()
-      .then((recaptchaIframe) => {
-        const body = recaptchaIframe.contents()
-        cy.wrap(body).find('.recaptcha-checkbox-border').should('be.visible').click()
-      })
-  })

@@ -34,7 +34,7 @@ Cypress.Commands.add("loginCoreOhmyfi", () => {
         // cy.get('#g-recaptcha *> iframe').then(($el) => {
         //     Cypress.dom.isVisible($el) // true
         // });
-        cy.request('POST', 'https://recaptchaenterprise.googleapis.com/v1/projects/605044276/assessments?key=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI').then(
+        cy.request('POST', 'https://www.google.com/recaptcha/api2/reload?k=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI').then(
             (response) => {
                 // response.body is automatically serialized into JSON
             }

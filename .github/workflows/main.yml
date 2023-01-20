@@ -1,10 +1,10 @@
 name: Cypress tests
 on:
-  pull_request:
-    types:
-      - closed
+  #pull_request:
+   # types:
+    #  - closed
   # Trigger analysis when pushing in master or pull requests,
-  #push:
+  push
    # branches: [master]
     #types: [opened, synchronize]
   # pull_request:
